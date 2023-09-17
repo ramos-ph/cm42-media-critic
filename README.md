@@ -25,4 +25,4 @@ $ bin/rails server
 
 ## Figma wires
 
-[Click here](https://www.figma.com/file/t4GIPRiWWJf9htg5Qv9cQT/cm42-media-critic?type=design&node-id=202%3A7&mode=design&t=QHgPcB6sbZQh6LaU-1)
+[Click here](https://www.figma.com/file/t4GIPRiWWJf9htg5Qv9cQT/cm42-media-critic?type=design&node-id=0%3A1&mode=design&t=QHgPcB6sbZQh6LaU-1)
