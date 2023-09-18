@@ -24,3 +24,9 @@ body {
     var(--background-start) 100%
   );
 }
+
+@layer components {
+  .bg-cm42 {
+    background: url('/codeminer-main-logo-bg.svg') no-repeat left;
+  }
+}
