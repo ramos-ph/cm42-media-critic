@@ -6,6 +6,8 @@ A simple project built to users be able to post their book, movie, or game criti
 
 - Ruby 3.2.2
 - Rails 7.0.8
+- RSpec Rails 6.0.3
+- Simplecov 0.22.0
 
 ## Installing
 
@@ -21,6 +23,20 @@ $ bundle
 ```
 $ cd backend
 $ bin/rails server
+```
+
+## Testing
+
+Run all the tests with `bundle`:
+
+```
+$ bundle exec rspec
+```
+
+This will automatically generate the test coverage. To check it open `/coverage/index.html`, or run this command:
+
+```
+$ xdg-open coverage/index.html
 ```
 
 ## Figma wires
