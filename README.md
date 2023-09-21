@@ -5,7 +5,7 @@ A simple project built to users be able to post their book, movie, or game criti
 ## Built with
 
 - Ruby 3.2.2
-- Rails 7.0.8
+- SQLite 3
 
 ## Installing
 
@@ -21,6 +21,24 @@ $ bundle
 ```
 $ cd backend
 $ bin/rails server
+```
+
+## Testing
+
+Run all the tests with `bundle`:
+
+```
+$ bundle exec rspec
+```
+
+This will automatically generate the test coverage. To check it, open `coverage/index.html` on your web browser. If you prefer, you can open it with your installed browser:
+
+```
+# If you're using Linux
+$ xdg-open coverage/index.html
+
+# If you are using Mac or Windows
+$ firefox coverage/index.html
 ```
 
 ## Figma wires
