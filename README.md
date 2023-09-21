@@ -41,6 +41,24 @@ $ xdg-open coverage/index.html
 $ firefox coverage/index.html
 ```
 
+## Contributing
+
+### How to create branch
+
+```sh
+git checkout -b [frontend|backend|infra]/[type]/complete-shared-header
+```
+
+Types: `feat|fix|refactor|chore|test|style|perf|docs|ci|build`
+
+### How to write commit message
+
+```sh
+git commit -m [type]: your message
+```
+
+Types: `feat|fix|refactor|chore|test|style|perf|docs|ci|build`
+
 ## Figma wires
 
 [Click here](https://www.figma.com/file/t4GIPRiWWJf9htg5Qv9cQT/cm42-media-critic?type=design&node-id=0%3A1&mode=design&t=QHgPcB6sbZQh6LaU-1)
