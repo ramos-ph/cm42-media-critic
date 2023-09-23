@@ -4,8 +4,13 @@ A simple project built to users be able to post their book, movie, or game criti
 
 ## Built with
 
+**Backend**
 - Ruby 3.2.2
 - SQLite 3
+
+**Frontend**
+- Next.js 13.4.19
+- Tailwindcss
 
 ## Installing
 
