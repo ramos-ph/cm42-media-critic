@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_26_123520) do
   end
 
   create_table "software_houses", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "name", null: false
     t.string "description", null: false
     t.string "address"
     t.datetime "created_at", null: false
