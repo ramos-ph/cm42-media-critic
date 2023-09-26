@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   scope "/api" do
     get "/health", to: "health#index"
 
-    resources :games, only: [:index, :show]
+    resources :games, only: [:index, :create, :show]
   end
 end
