@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_26_122354) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_26_123520) do
+  create_table "games", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.integer "year", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games_developers", id: false, force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "software_house_id", null: false
+  end
+
+  create_table "games_genres", id: false, force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "genre_id", null: false
+  end
+
+  create_table "games_platforms", id: false, force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "platform_id", null: false
+  end
+
+  create_table "games_publishers", id: false, force: :cascade do |t|
+    t.integer "game_id", null: false
+    t.integer "software_house_id", null: false
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
