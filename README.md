@@ -4,8 +4,13 @@ A simple project built to users be able to post their book, movie, or game criti
 
 ## Built with
 
+**Backend**
 - Ruby 3.2.2
 - SQLite 3
+
+**Frontend**
+- Next.js 13.4.19
+- Tailwindcss
 
 ## Installing
 
@@ -40,6 +45,24 @@ $ xdg-open coverage/index.html
 # If you are using Mac or Windows
 $ firefox coverage/index.html
 ```
+
+## Contributing
+
+### How to create branch
+
+```sh
+git checkout -b [frontend|backend|infra]/[type]/complete-shared-header
+```
+
+Types: `feat|fix|refactor|chore|test|style|perf|docs|ci|build`
+
+### How to write commit message
+
+```sh
+git commit -m [type]: your message
+```
+
+Types: `feat|fix|refactor|chore|test|style|perf|docs|ci|build`
 
 ## Figma wires
 
