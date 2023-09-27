@@ -17,6 +17,13 @@ class GamesController < ApplicationController
     end
   end
 
+  def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+
+    render json: @game, include: [:platforms, :developers, :publishers, :genres]
+  end
+
   def show
     @game = Game.find(params[:id])
 
@@ -35,7 +42,7 @@ class GamesController < ApplicationController
     params
       .require(:game)
       .permit(:title, :description, :year,
-        developer_ids: [], platforms_ids: [], genres_ids: [], publishers_ids: [])
+        developer_ids: [], platform_ids: [], genre_ids: [], publisher_ids: [])
   end
 
   def game_not_found
