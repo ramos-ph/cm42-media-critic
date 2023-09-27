@@ -2,8 +2,8 @@ class CreateGames < ActiveRecord::Migration[7.0]
   def change
     create_table :games do |t|
       t.string :title, null: false
-      t.string :description, null: false
       t.integer :year, null: false
+      t.string :description
 
       t.timestamps
     end
