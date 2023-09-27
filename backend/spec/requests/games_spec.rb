@@ -1,9 +1,16 @@
 require "rails_helper"
 
 RSpec.describe GamesController, type: :request do
+  let(:json_body) { JSON.parse(response.body) }
+
   describe "#index" do
     context "when there are no games" do
-      it "responds with an empty array"
+      it "responds with an empty array" do
+        get "/api/games"
+
+        expect(json_body).to eq([])
+        expect(response).to have_http_status(:ok)
+      end
     end
 
     context "when there are games" do
