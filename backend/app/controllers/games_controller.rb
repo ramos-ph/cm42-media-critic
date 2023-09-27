@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :game_not_found
+
   def index
     @games = Game.all
 
@@ -27,5 +29,9 @@ class GamesController < ApplicationController
     params
       .require(:game)
       .permit(:title, :description, :year)
+  end
+
+  def game_not_found
+    render json: { error: "Game not found" }, status: :not_found
   end
 end
