@@ -2,14 +2,14 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
 
-    render json: { data: @games }
+    render json: @games
   end
 
   def create
     @game = Game.new(game_params)
 
     if @game.save
-      render json: { data: @game }, status: :created
+      render json: @game, status: :created
     else
       render json: { error: "Could not create a game" }
     end
@@ -18,7 +18,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
-    render json: { data: @game }, include: [:platforms, :developers, :publishers]
+    render json: @game, include: [:platforms, :developers, :publishers]
   end
 
   private
