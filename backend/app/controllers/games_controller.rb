@@ -8,7 +8,12 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(game_params)
+    @game = Game.new(game_params.slice(:title, :description, :year))
+
+    @game.developers = SoftwareHouse.where(id: game_params[:developers])
+    @game.publishers = SoftwareHouse.where(id: game_params[:publishers])
+    @game.platforms = Platform.where(id: game_params[:platforms])
+    @game.genres = Genre.where(id: game_params[:genres])
 
     if @game.save
       render json: @game, status: :created
@@ -20,7 +25,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
-    render json: @game, include: [:platforms, :developers, :publishers]
+    render json: @game, include: [:platforms, :developers, :publishers, :genres]
   end
 
   def destroy
@@ -32,9 +37,9 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params
+    @game_params ||= params
       .require(:game)
-      .permit(:title, :description, :year)
+      .permit(:title, :description, :year, developers: [], platforms: [], genres: [], publishers: [])
   end
 
   def game_not_found
