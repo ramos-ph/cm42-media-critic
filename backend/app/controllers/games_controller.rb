@@ -23,6 +23,12 @@ class GamesController < ApplicationController
     render json: @game, include: [:platforms, :developers, :publishers]
   end
 
+  def destroy
+    Game.delete(params[:id])
+
+    render status: :no_content
+  end
+
   private
 
   def game_params
