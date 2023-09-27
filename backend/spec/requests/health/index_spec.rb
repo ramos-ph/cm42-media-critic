@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe HealthController, type: :request do
-  describe "#index" do
+RSpec.describe "Health", type: :request do
+  describe "GET /api/health" do
     it "responds with 'ok'" do
       get "/api/health"
 
