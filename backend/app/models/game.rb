@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  validates_presence_of :title, :description, :year
+  validates_presence_of :title, :year
 
   has_and_belongs_to_many :platforms, join_table: "games_platforms"
   has_and_belongs_to_many :genres,    join_table: "games_genres"

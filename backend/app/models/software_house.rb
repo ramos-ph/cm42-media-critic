@@ -1,5 +1,5 @@
 class SoftwareHouse < ApplicationRecord
-  validates_presence_of :name, :description
+  validates_presence_of :name
 
   has_and_belongs_to_many :developed_games,
                           join_table: "games_developers",
