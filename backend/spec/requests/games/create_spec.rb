@@ -3,13 +3,15 @@ require "rails_helper"
 RSpec.describe "Games", type: :request do
   let(:response_json) { JSON.parse(response.body) }
 
-  let(:params) { {
-    "game" => {
-      "title" => "Stardew Valley",
-      "description" => "The best game",
-      "year": 2016
+  let(:params) do
+    {
+      "game" => {
+        "title" => "Stardew Valley",
+        "description" => "The best game",
+        "year": 2016
+      }
     }
-  } }
+  end
 
   describe "POST /api/games" do
     context "when create params are valid" do
