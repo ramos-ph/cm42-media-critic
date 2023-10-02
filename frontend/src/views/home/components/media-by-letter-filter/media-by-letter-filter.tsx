@@ -11,7 +11,7 @@ export default function MediaByLetterFilter() {
   const [selectedLetter, setSelectedLetter] = useState<Alphabet>()
 
   return (
-    <div className={classNames(appFont.className, 'text-3xl flex gap-4')}>
+    <div className={classNames(appFont.className, 'text-3xl flex justify-between')}>
       {ALPHABET.map((letter) => (
         <span
           key={letter}
