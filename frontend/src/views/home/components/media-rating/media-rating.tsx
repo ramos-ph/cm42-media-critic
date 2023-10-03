@@ -13,7 +13,7 @@ export default function MediaRating({ rating }: Props) {
           src={starIcon}
           height={24}
           width={24}
-          alt="Media rating"
+          alt="Media rating star"
         />
       ))}
     </div>
