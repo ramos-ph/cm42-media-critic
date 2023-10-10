@@ -1,51 +1,20 @@
-import GameCard from '../game-card/game-card'
+'use client'
 
-const fakeGames = [
-  {
-    id: 1,
-    rating: 5,
-    year: 2021,
-    title: 'The Witcher 3: Wild Hunt',
-  },
-  {
-    id: 2,
-    rating: 4,
-    year: 2019,
-    title: 'The Elder Scrolls V: Skyrim',
-  },
-  {
-    id: 3,
-    rating: 3,
-    year: 2019,
-    title: 'Fallout 4',
-  },
-  {
-    id: 4,
-    rating: 2,
-    year: 2019,
-    title: 'EA FC 24',
-  },
-  {
-    id: 5,
-    rating: 4,
-    year: 2019,
-    title: 'Grand Theft Auto V',
-  },
-  {
-    id: 6,
-    rating: 5,
-    year: 2019,
-    title: 'Mass Effect: Andromeda',
-  }
-]
+import GameCard from '../game-card/game-card'
+import useFetchGames from './useFetchGames'
 
 export default function Games() {
+  const { data: games, isLoading, error } = useFetchGames()
+
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error</div>
+
   return (
     <div className="grid grid-cols-4 gap-4">
-      {fakeGames.map((game) => (
+      {games?.map((game) => (
         <GameCard
           key={game.id}
-          rating={game.rating}
+          rating={5}
           year={game.year}
           title={game.title}
         />
