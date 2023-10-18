@@ -3,13 +3,11 @@ import MediaByLetterFilter from './components/media-by-letter-filter/media-by-le
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="flex flex-col gap-9 px-4">
       {/* TODO: Top medias */}
-      <div className='flex flex-col gap-9'>
-        {/* TODO: Filters (selects) */}
-        <MediaByLetterFilter />
-        <Games />
-      </div>
+      {/* TODO: Filters (selects) */}
+      <MediaByLetterFilter />
+      <Games />
     </div>
   )
 }

@@ -16,7 +16,7 @@ export default function RootLayout({ children }: Children) {
     <html lang="en">
       <body className={textFont.className}>
         <Header />
-        <main className="min-h-screen w-[942px] m-auto mt-20">
+        <main className="min-h-screen lg:w-[942px] m-auto mt-20">
           <QueryProvider>{children}</QueryProvider>
         </main>
       </body>
