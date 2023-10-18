@@ -14,7 +14,7 @@ export default function MediaByLetterFilter() {
     <div
       className={classNames(
         appFont.className,
-        'overflow-x-auto text-3xl flex w-auto gap-4 justify-between',
+        'overflow-x-auto text-3xl flex w-auto gap-2 justify-between',
       )}
     >
       {ALPHABET.map((letter) => (
