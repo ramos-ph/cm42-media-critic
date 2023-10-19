@@ -13,7 +13,7 @@ export default function Games() {
   if (!hasGames) return <AlertMessage message="No games found" />
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 content-center w-fit gap-4 mx-auto">
       {games.map((game) => (
         <GameCard
           key={game.id}
