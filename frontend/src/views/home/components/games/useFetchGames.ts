@@ -11,7 +11,7 @@ export default function useFetchGames() {
     isLoading,
     error,
     games: data ?? [],
-    hasGames: (data?.length as number) > 0,
+    hasGames: (data ?? []).length > 0,
     isFetching,
   }
 }
