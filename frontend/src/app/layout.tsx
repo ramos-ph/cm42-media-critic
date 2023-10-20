@@ -1,10 +1,10 @@
-import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Children } from '../shared/components/types'
-import Header from '../shared/components/header/header'
 
-const inter = Inter({ subsets: ['latin'] })
+import Header from '@/shared/components/header/header'
+import { Children } from '@/shared/components/types'
+import { textFont } from '@/shared/fonts'
+import './globals.css'
+import QueryProvider from './components/QueryProvider'
 
 export const metadata: Metadata = {
   title: 'CM42 Media Critic',
@@ -14,9 +14,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Children) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={textFont.className}>
         <Header />
-        <main>{children}</main>
+        <main className="min-h-screen lg:w-[942px] m-auto mt-20">
+          <QueryProvider>{children}</QueryProvider>
+        </main>
       </body>
     </html>
   )

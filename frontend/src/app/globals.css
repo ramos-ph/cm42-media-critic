@@ -17,7 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground));
+  color: var(--foreground);
   background: linear-gradient(
     180deg,
     var(--background-end) 0%,
@@ -28,5 +28,13 @@ body {
 @layer components {
   .bg-cm42 {
     background: url('/codeminer-main-logo-bg.svg') no-repeat left;
+  }
+
+  .media-card-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 39.76%,
+      rgb(0 0 0 / 81%) 75.52%
+    );
   }
 }
