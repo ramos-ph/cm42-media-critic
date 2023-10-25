@@ -15,21 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
+        working-directory: ./backend
         uses: actions/checkout@v3
 
-      # Add or replace dependency steps here
       - name: Install Ruby and gems
         working-directory: ./backend
         uses: ruby/setup-ruby@v1.157.0
         with:
           bundler-cache: true
 
-      # Add or replace database setup steps here
       - name: Set up database schema
         working-directory: ./backend
         run: bin/rails db:schema:load
 
-      # Add or replace test runners here
       - name: Run tests
         working-directory: ./backend
         run: bundle exec rspec
