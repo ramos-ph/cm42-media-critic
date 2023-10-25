@@ -24,7 +24,7 @@ jobs:
           bundler-cache: true
 
       - name: Set up database schema
-        run: bundle exec rails db:schema:load
+        run: bundle install && bundle exec rails db:schema:load
         working-directory: ./backend
 
       - name: Run tests
