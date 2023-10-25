@@ -19,10 +19,13 @@ jobs:
 
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1.157.0
-        run: bundle install
         with:
           ruby-version: '3.2.2'
           bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+        working-directory: ./backend
 
       - name: Set up database schema
         run: bundle exec rails db:schema:load
