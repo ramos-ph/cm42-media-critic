@@ -19,6 +19,7 @@ jobs:
 
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1.157.0
+        working-directory: ./backend
         with:
           bundler-cache: true
 
