@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        working-directory: ./backend
         uses: actions/checkout@v3
+        working-directory: ./backend
 
       - name: Install Ruby and gems
-        working-directory: ./backend
         uses: ruby/setup-ruby@v1.157.0
+        working-directory: ./backend
         with:
           bundler-cache: true
 
