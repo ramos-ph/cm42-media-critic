@@ -54,15 +54,21 @@ $ firefox coverage/index.html
 git checkout -b [frontend|backend|infra]/[type]/complete-shared-header
 ```
 
-Types: `feat|fix|refactor|chore|test|style|perf|docs|ci|build`
-
 ### How to write commit message
 
 ```sh
 git commit -m [type]: your message
 ```
 
-Types: `feat|fix|refactor|chore|test|style|perf|docs|ci|build`
+**Types**
+- **feat**: New feature/functionality
+- **fix**:  Correction of a bug/error
+- **refactor**: Refactoring a piece of code that does not add new functionality
+- **chore**: work in progress
+- **perf**: performance adjustments
+- **docs**: changes/creation of docs
+- **ci**: adjustments/additions to Continuous integration
+- **build**: adjustments to the app's build configurations
 
 ## Figma wires
 
