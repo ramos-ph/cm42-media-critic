@@ -15,7 +15,7 @@ describe('GameCard', () => {
 
     expect(screen.getByText('The Witcher 3: Wild Hunt')).to.exist
     expect(screen.getByAltText('The Witcher 3: Wild Hunt')).to.exist
-    expect(screen.getAllByAltText('Media rating star').length).to.be.equal(5)
+    expect(screen.getAllByTestId('rating-star').length).to.be.equal(5)
     expect(screen.getByText('2021')).to.exist
   })
 
