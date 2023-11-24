@@ -9,11 +9,11 @@ export default function Rating({ stars, size }: Props) {
   const starSize = size ?? 24
 
   return (
-    <div className='flex'>
+    <div className="flex gap-1">
       {Array.from({ length: stars }).map((_, index) => (
         <StarIcon
           key={index}
-          className="mx-1"
+          data-testid='rating-star'
           width={starSize}
           height={starSize}
         />

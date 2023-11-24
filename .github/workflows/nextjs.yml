@@ -1,0 +1,27 @@
+# Based off of https://gist.github.com/alexng353/80f4457738b9f312f18ed6f5772ffeac
+
+name: "Next.js CI"
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./frontend
+        
+      - name: Run tests
+        run: npm test
+        working-directory: ./frontend
