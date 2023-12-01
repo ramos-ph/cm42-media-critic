@@ -15,6 +15,10 @@ class Movies::Create
       cast: @params[:cast],
       year: @params[:year]
     )
-    @repository.create!(movie.to_hash)
+
+    result = @repository.create!(movie.to_hash)
+    movie.id = result.id
+
+    movie
   end
 end
