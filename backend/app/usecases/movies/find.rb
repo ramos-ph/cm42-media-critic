@@ -4,6 +4,17 @@ class Movies::Find
   end
 
   def call
-    @repository.all
+    @repository.all.map do |movie|
+      Movie.new(
+        id: movie.id,
+        director: movie.director,
+        writer: movie.writer,
+        title: movie.title,
+        producer: movie.producer,
+        production_company: movie.production_company,
+        cast: JSON.parse(movie.cast),
+        year: movie.year
+      )
+    end
   end
 end
