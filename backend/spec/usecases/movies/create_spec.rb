@@ -22,5 +22,7 @@ RSpec.describe Movies::Create do
     expect(movie.production_company).to eq("Lucasfilm")
     expect(movie.cast).to eq(["Han Solo", "Princess Leia"])
     expect(movie.year).to eq(1977)
+    expect(movie.created_at).to be_present
+    expect(movie.updated_at).to be_present
   end
 end

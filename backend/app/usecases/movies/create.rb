@@ -18,6 +18,8 @@ class Movies::Create
 
     result = @repository.create!(movie.to_hash)
     movie.id = result.id
+    movie.created_at = result.created_at
+    movie.updated_at = result.updated_at
 
     movie
   end

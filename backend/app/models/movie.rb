@@ -1,7 +1,7 @@
 class Movie
-  attr_accessor :id, :director, :writer, :title, :producer, :production_company, :cast, :year
+  attr_accessor :id, :director, :writer, :title, :producer, :production_company, :cast, :year, :created_at, :updated_at
 
-  def initialize(id: nil, director:, writer:, title:, producer:, production_company:, cast:, year:)
+  def initialize(id: nil, director:, writer:, title:, producer:, production_company:, cast:, year:, created_at: nil, updated_at: nil)
     @id = id
     @director = director
     @writer = writer
@@ -10,6 +10,8 @@ class Movie
     @production_company = production_company
     @cast = cast
     @year = year
+    @created_at = created_at
+    @updated_at = updated_at
   end
 
   def to_hash
@@ -21,7 +23,9 @@ class Movie
       producer: @producer,
       production_company: @production_company,
       cast: @cast,
-      year: @year
+      year: @year,
+      created_at: @created_at,
+      updated_at: @updated_at
     }.compact
   end
 end
