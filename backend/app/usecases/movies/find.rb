@@ -13,7 +13,9 @@ class Movies::Find
         producer: movie.producer,
         production_company: movie.production_company,
         cast: JSON.parse(movie.cast),
-        year: movie.year
+        year: movie.year,
+        created_at: movie.created_at,
+        updated_at: movie.updated_at
       )
     end
   end
