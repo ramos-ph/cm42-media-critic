@@ -7,6 +7,7 @@ class Movies::Update
 
   def call
     movie = @movie.new(
+      id: @params[:id],
       director: @params[:director],
       writer: @params[:writer],
       title: @params[:title],
@@ -16,7 +17,7 @@ class Movies::Update
       year: @params[:year]
     )
 
-    current_movie = @repository.find(@params[:id])
+    current_movie = @repository.find(movie.id)
     current_movie.update!(movie.to_hash)
   end
 end

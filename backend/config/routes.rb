@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get "/health", to: "health#index"
 
     resources :games, only: [:index, :create, :show, :update, :destroy]
-    resources :movies, only: [:index, :create]
+    resources :movies, only: [:index, :create, :show, :update, :destroy]
   end
 end
