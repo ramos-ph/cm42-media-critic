@@ -5,7 +5,7 @@ class Movies::Update
     @repository = repository
   end
 
-  def call
+  def call!
     movie = @movie.new(
       id: @params[:id],
       director: @params[:director],

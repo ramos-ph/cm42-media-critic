@@ -12,7 +12,7 @@ RSpec.describe Movies::Delete do
         cast: ["Han Solo", "Princess Leia"],
         year: 1977
       }
-    ).call
+    ).call!
 
     expect(Movies::Find.new.call).not_to be_empty
 

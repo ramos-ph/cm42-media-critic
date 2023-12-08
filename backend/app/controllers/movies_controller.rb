@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie = Movies::Create.new(params: movie_params).call
+    movie = Movies::Create.new(params: movie_params).call!
 
     render json: movie, status: :created
   rescue ActiveRecord::RecordInvalid
@@ -14,9 +14,11 @@ class MoviesController < ApplicationController
   end
 
   def update
-    Movies::Update.new(params: movie_params.merge(id: params[:id]), movie: Movie).call
+    Movies::Update.new(params: movie_params.merge(id: params[:id]), movie: Movie).call!
 
     render status: :no_content
+  rescue ActiveRecord::RecordInvalid
+    render json: { error: "Could not update a movie" }, status: :unprocessable_entity
   end
 
   def show

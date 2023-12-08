@@ -12,7 +12,7 @@ RSpec.describe Movies::Create do
         cast: ["Han Solo", "Princess Leia"],
         year: 1977
       }
-    ).call
+    ).call!
 
     expect(movie.id).to be_present
     expect(movie.director).to eq("George Lucas")

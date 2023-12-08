@@ -14,7 +14,7 @@ RSpec.describe "Movies", type: :request do
             cast: ["Han Solo", "Princess Leia"],
             year: 1977
           }
-        ).call
+        ).call!
       }
 
       it "responds with 204" do

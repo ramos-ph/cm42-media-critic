@@ -12,7 +12,7 @@ RSpec.describe Movies::Find do
         cast: ["Han Solo", "Princess Leia"],
         year: 1977
       }
-    ).call
+    ).call!
 
     movies = described_class.new.call
 

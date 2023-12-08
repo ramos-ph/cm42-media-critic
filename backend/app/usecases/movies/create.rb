@@ -5,7 +5,7 @@ class Movies::Create
     @repository = repository
   end
 
-  def call
+  def call!
     movie = @movie.new(
       director: @params[:director],
       writer: @params[:writer],

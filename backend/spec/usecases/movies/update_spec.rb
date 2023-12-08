@@ -12,7 +12,7 @@ RSpec.describe Movies::Update do
         cast: ["Han Solo", "Princess Leia"],
         year: 1977
       }
-    ).call
+    ).call!
 
     described_class.new(
       params: {
@@ -25,7 +25,7 @@ RSpec.describe Movies::Update do
         cast: ["Han Solo", "Princess Leia"],
         year: 1977
       }
-    ).call
+    ).call!
 
     updated_movie = Movies::FindById.new(id: movie.id).call
 

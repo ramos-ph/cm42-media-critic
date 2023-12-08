@@ -12,7 +12,7 @@ RSpec.describe Movies::FindById do
         cast: ["Han Solo", "Princess Leia"],
         year: 1977
       }
-    ).call
+    ).call!
 
     movie = described_class.new(id: movie.id).call
 
