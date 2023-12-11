@@ -1,6 +1,4 @@
 class MoviesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :movie_not_found
-
   def index
     render json: Movies::Find.new.call
   end
@@ -10,7 +8,7 @@ class MoviesController < ApplicationController
 
     render json: movie, status: :created
   rescue ActiveRecord::RecordInvalid
-    render json: { error: "Could not create a movie" }, status: :unprocessable_entity
+    raise ApiException::UnprocessableEntity.new("Could not create a movie")
   end
 
   def update
@@ -18,13 +16,15 @@ class MoviesController < ApplicationController
 
     render status: :no_content
   rescue ActiveRecord::RecordInvalid
-    render json: { error: "Could not update a movie" }, status: :unprocessable_entity
+    raise ApiException::UnprocessableEntity.new("Could not update a movie")
   end
 
   def show
     movie = Movies::FindById.new(id: params[:id]).call
 
     render json: movie
+  rescue ActiveRecord::RecordNotFound
+    raise ApiException::NotFound.new("Movie not found")
   end
 
   def destroy
@@ -39,9 +39,5 @@ class MoviesController < ApplicationController
     params
       .require(:movie)
       .permit(:director, :writer, :title, :producer, :production_company, :year, cast: [])
-  end
-
-  def movie_not_found
-    render json: { error: "Movie not found" }, status: :not_found
   end
 end
